@@ -27,6 +27,8 @@ A comprehensive geospatial and machine learning project for climate vulnerabilit
 
 **Project URL:** [Capstone Project](https://capstone-project-vizon15.streamlit.app/)
 
+<<<<<<< HEAD
+
 ## 🛠️ Technologies Used
 
 - **Python**: Primary programming language
@@ -42,10 +44,6 @@ A comprehensive geospatial and machine learning project for climate vulnerabilit
 2. Interact with the GIS maps and analyze climate trends.
 3. Submit feedback directly within the app.
 4. Developers can contribute by improving data analysis workflows.
-
-## 📌 Overview
-
-This project is designed to provide advanced Geographic Information System (GIS) data analysis, focusing on Nepal's climate and environmental insights. Built using **Streamlit**, the application enables users to visualize spatial data, analyze geospatial trends, and collect feedback to improve climate-related research.
 
 - **Comprehensive EDA** of daily climate, hazard, and impact data.
 - **Geospatial mapping** of climate variables, hazards, and vulnerability indices by district/province.
@@ -66,11 +64,13 @@ This project is designed to provide advanced Geographic Information System (GIS)
 - 🧠 **NLP**: sentiment, topic modeling, entity recognition, news/social scraping
 - 🌐 **Streamlit dashboard**: filters, maps, time series, model predictions, PDF downloads
 - 📤 **Integrated feedback system** and real-time documentation
+  <<<<<<< HEAD
 - **Interactive Maps**: Visualize GIS data with choropleth and custom map layers.
 - **Climate Data Analysis**: Analyze temperature, precipitation, and environmental patterns.
 - **Google Sheets Integration**: Collect and manage user feedback dynamically.
 - **Secure Secrets Management**: Implements best practices for handling API keys and credentials.
-- **Streamlit-Powered UI**: User-friendly and efficient interface for seamless data exploration.
+- # **Streamlit-Powered UI**: User-friendly and efficient interface for seamless data exploration.
+  > > > > > > > 4db221c (add deadline)
 
 ---
 
@@ -80,6 +80,7 @@ This project is designed to provide advanced Geographic Information System (GIS)
 |capstone-project-Vizon15
 ├── ./ASSIGNMENT.md
 ├── ./apps
+<<<<<<< HEAD
 │   └── ./apps/app.py
 ├── ./datasets
 │   ├── ./datasets/district_shape
@@ -136,6 +137,64 @@ This project is designed to provide advanced Geographic Information System (GIS)
 │   ├── ./src/test.ipynb
 │   ├── ./src/updated_app.py
 │   └── ./src/updated_nlp.py
+=======
+│   └── ./apps/app.py
+├── ./datasets
+│   ├── ./datasets/district_shape
+│   │   ├── ./datasets/district_shape/district.cpg
+│   │   ├── ./datasets/district_shape/district.dbf
+│   │   ├── ./datasets/district_shape/district.geojson
+│   │   ├── ./datasets/district_shape/district.prj
+│   │   ├── ./datasets/district_shape/district.shp
+│   │   └── ./datasets/district_shape/district.shx
+│   ├── ./datasets/nepal_gis_daily_data.csv
+│   ├── ./datasets/processed
+│   │   ├── ./datasets/processed/preprocessed_climate_data.csv
+│   │   └── ./datasets/processed/updated_engineered_features_with_provinces.csv
+│   └── ./datasets/synthetic_district_elevation.csv
+├── ./deployment
+│   ├── ./deployment/architecture.md
+│   ├── ./deployment/backup.md
+│   ├── ./deployment/ci_cd.yml
+│   ├── ./deployment/monitoring.py
+│   ├── ./deployment/pipeline.py
+│   └── ./deployment/security.md
+├── ./docs
+│   ├── ./docs/api.md
+│   ├── ./docs/code_comments.md
+│   ├── ./docs/faq.md
+│   ├── ./docs/maintenance.md
+│   ├── ./docs/training.md
+│   ├── ./docs/tutorials.md
+│   ├── ./docs/update_procedure.md
+│   ├── ./docs/user_guide.md
+│   └── ./docs/wiki.md
+├── ./future.md
+├── ./models
+│   ├── ./models/gb_vulnerability.pkl
+│   ├── ./models/gbreg_impact.pkl
+│   ├── ./models/histgb_flood_event.pkl
+│   ├── ./models/lasso_impact.pkl
+│   ├── ./models/linreg_impact.pkl
+│   ├── ./models/rf_climate_zone.pkl
+│   └── ./models/ridge_impact.pkl
+├── ./output
+├── ./requirements.txt
+├── ./src
+│   ├── ./src/__pycache__
+│   │   └── ./src/__pycache__/nlp.cpython-311.pyc
+│   ├── ./src/app.py
+│   ├── ./src/data_gen.py
+│   ├── ./src/data_preprocessing.ipynb
+│   ├── ./src/eda.ipynb
+│   ├── ./src/feature_engineering.py
+│   ├── ./src/model_dev.py
+│   ├── ./src/model_validation.py
+│   ├── ./src/nlp.py
+│   ├── ./src/test.ipynb
+│   ├── ./src/updated_app.py
+│   └── ./src/updated_nlp.py
+>>>>>>> 4db221c (add deadline)
 ├── ./README.md
 └── ./repo_structure.txt
 
