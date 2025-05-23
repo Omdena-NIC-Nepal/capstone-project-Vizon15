@@ -25,9 +25,27 @@ A comprehensive geospatial and machine learning project for climate vulnerabilit
 
 ---
 
-## Project Overview
+**Project URL:** [Capstone Project](https://capstone-project-vizon15.streamlit.app/)
 
-Climate change poses acute risks to Nepal’s diverse regions—from the subtropical Terai to the high Himalayas. This project delivers:
+## 🛠️ Technologies Used
+
+- **Python**: Primary programming language
+- **Streamlit**: Web application framework
+- **Google Sheets API**: Data storage & feedback integration
+- **Plotly & Folium**: GIS mapping & visualization
+- **gspread**: Google Sheets API wrapper
+- **OAuth 2.0**: Secure authentication for Google services
+
+## 📥 How to Use
+
+1. Visit the [Capstone Project](https://capstone-project-vizon15.streamlit.app/)
+2. Interact with the GIS maps and analyze climate trends.
+3. Submit feedback directly within the app.
+4. Developers can contribute by improving data analysis workflows.
+
+## 📌 Overview
+
+This project is designed to provide advanced Geographic Information System (GIS) data analysis, focusing on Nepal's climate and environmental insights. Built using **Streamlit**, the application enables users to visualize spatial data, analyze geospatial trends, and collect feedback to improve climate-related research.
 
 - **Comprehensive EDA** of daily climate, hazard, and impact data.
 - **Geospatial mapping** of climate variables, hazards, and vulnerability indices by district/province.
@@ -48,6 +66,11 @@ Climate change poses acute risks to Nepal’s diverse regions—from the subtrop
 - 🧠 **NLP**: sentiment, topic modeling, entity recognition, news/social scraping
 - 🌐 **Streamlit dashboard**: filters, maps, time series, model predictions, PDF downloads
 - 📤 **Integrated feedback system** and real-time documentation
+- **Interactive Maps**: Visualize GIS data with choropleth and custom map layers.
+- **Climate Data Analysis**: Analyze temperature, precipitation, and environmental patterns.
+- **Google Sheets Integration**: Collect and manage user feedback dynamically.
+- **Secure Secrets Management**: Implements best practices for handling API keys and credentials.
+- **Streamlit-Powered UI**: User-friendly and efficient interface for seamless data exploration.
 
 ---
 

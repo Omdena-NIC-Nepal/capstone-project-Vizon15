@@ -39,7 +39,10 @@ def load_data():
         ]
     )
     raw['District'] = raw['District'].str.title()
+
     df = eng.merge(raw, on=['Date','District'], how='left', suffixes=('','_raw'))
+    # Ensure the Date column is a true datetime dtype:
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
     df['Province'] = df['Province'].fillna('Unknown')
     df['District'] = df['District'].fillna('Unknown')
     for col in ['Temperature (°C)','Rainfall (mm)','Precipitation (mm)',
@@ -141,14 +144,15 @@ with tabs[1]:
             merged = geo_gdf.merge(agg, on='District')
             location_field = 'District'
         geojson = merged.set_index(location_field).__geo_interface__
-        fig = px.choropleth_mapbox(
+        fig = px.choropleth_map(
             merged, geojson=geojson, locations=location_field,
-            color=var, mapbox_style='carto-positron',
+            color=var, 
             center={'lat':28,'lon':84}, zoom=6 if level=='Province' else 8,
             opacity=0.6, hover_name=location_field,
             title=f"{var} by {level}"
         )
-        fig.update_layout(margin={'r':0,'t':30,'l':0,'b':0})
+        fig.update_geos(fitbounds="locations", visible=False)
+        fig.update_layout(margin={'r':0,'t':30,'l':0,'b':0}, mapbox_style="carto-positron")
         st.plotly_chart(fig, use_container_width=True)
     except Exception as e:
         st.error(f"Map error: {e}")
@@ -305,7 +309,7 @@ models = load_models()
 
 # Predictions Tab
 with tabs[4]:
-    st.header("Predict Future Events")
+    st.header("Predict Future Events With Trained Datasets")
     event = st.selectbox("Event", ['Flood', 'Temperature (°C)', 'Rainfall (mm)', 'Forest Fire', 'Impact'])
     steps = st.slider("Forecast Horizon (weeks)", 1, 104, 5)
     if st.button("Forecast"):
@@ -505,32 +509,37 @@ from google.oauth2 import service_account
 
 def save_feedback(name, email, feedback):
     try:
-        # Define the scope for Google Sheets and Google Drive
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        
-        # Authenticate using the service account JSON key file
+        # Define the correct OAuth scope for Google Sheets
+        scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+
         # Load secrets from Streamlit Cloud
-        gcp_secrets = st.secrets["GCP"]
+        gcp_secrets = st.secrets["gcp_service_account"]  # Ensure correct section name
 
         # Authenticate using secrets.toml
-        creds = service_account.Credentials.from_service_account_info({
-            "type": gcp_secrets["type"],
-            "project_id": gcp_secrets["project_id"],
-            "private_key": gcp_secrets["private_key"],
-            "client_email": gcp_secrets["client_email"],
-            })
+        creds = service_account.Credentials.from_service_account_info(
+            {
+                "type": gcp_secrets["type"],
+                "project_id": gcp_secrets["project_id"],
+                "private_key": gcp_secrets["private_key"],
+                "client_email": gcp_secrets["client_email"],
+                "token_uri": gcp_secrets["token_uri"],
+            },
+            scopes=scope  # Ensure scopes are passed correctly
+        )
+
         client = gspread.authorize(creds)
 
         # Open the Google Sheet and select the first sheet
         sheet = client.open("NepalClimateFeedback").sheet1
-        
+
         # Append a new row with the feedback data
         sheet.append_row([datetime.now().strftime('%Y-%m-%d %H:%M:%S'), name, email, feedback])
-        
+
         return True
     except Exception as e:
         st.error(f"Error saving feedback: {e}")
         return False
+
 # Feedback Tab
 with tabs[6]:
     st.header("📩 Send Feedback to Admin")
