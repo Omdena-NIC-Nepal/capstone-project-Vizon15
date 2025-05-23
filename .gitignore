@@ -4,7 +4,6 @@ datasets/processed/updated_engineered_features_with_provinces.csv
 __pycache__/
 *.pyc
 venv/
-# Ignore service account
-service_account.json
+
 # Ignore service account toml file.
 .streamlit/secrets.toml
