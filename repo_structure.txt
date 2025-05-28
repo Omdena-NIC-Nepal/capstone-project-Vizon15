@@ -1,0 +1,61 @@
+.__capstone-project-Vizon15
+├── ./ASSIGNMENT.md
+├── ./apps
+│   └── ./apps/app.py
+├── ./datasets
+│   ├── ./datasets/district_shape
+│   │   ├── ./datasets/district_shape/district.cpg
+│   │   ├── ./datasets/district_shape/district.dbf
+│   │   ├── ./datasets/district_shape/district.geojson
+│   │   ├── ./datasets/district_shape/district.prj
+│   │   ├── ./datasets/district_shape/district.shp
+│   │   └── ./datasets/district_shape/district.shx
+│   ├── ./datasets/nepal_gis_daily_data.csv
+│   ├── ./datasets/processed
+│   │   ├── ./datasets/processed/preprocessed_climate_data.csv
+│   │   └── ./datasets/processed/updated_engineered_features_with_provinces.csv
+│   └── ./datasets/synthetic_district_elevation.csv
+├── ./deployment
+│   ├── ./deployment/architecture.md
+│   ├── ./deployment/backup.md
+│   ├── ./deployment/ci_cd.yml
+│   ├── ./deployment/monitoring.py
+│   ├── ./deployment/pipeline.py
+│   └── ./deployment/security.md
+├── ./docs
+│   ├── ./docs/api.md
+│   ├── ./docs/code_comments.md
+│   ├── ./docs/faq.md
+│   ├── ./docs/maintenance.md
+│   ├── ./docs/training.md
+│   ├── ./docs/tutorials.md
+│   ├── ./docs/update_procedure.md
+│   ├── ./docs/user_guide.md
+│   └── ./docs/wiki.md
+├── ./future.md
+├── ./models
+│   ├── ./models/gb_vulnerability.pkl
+│   ├── ./models/gbreg_impact.pkl
+│   ├── ./models/histgb_flood_event.pkl
+│   ├── ./models/lasso_impact.pkl
+│   ├── ./models/linreg_impact.pkl
+│   ├── ./models/rf_climate_zone.pkl
+│   └── ./models/ridge_impact.pkl
+├── ./output
+├── ./requirements.txt
+├── ./src
+│   ├── ./src/__pycache__
+│   │   └── ./src/__pycache__/nlp.cpython-311.pyc
+│   ├── ./src/app.py
+│   ├── ./src/data_gen.py
+│   ├── ./src/data_preprocessing.ipynb
+│   ├── ./src/eda.ipynb
+│   ├── ./src/feature_engineering.py
+│   ├── ./src/model_dev.py
+│   ├── ./src/model_validation.py
+│   ├── ./src/nlp.py
+│   ├── ./src/test.ipynb
+│   ├── ./src/updated_app.py
+│   └── ./src/updated_nlp.py
+├── ./README.md
+└── ./repo_structure.txt
