@@ -25,9 +25,9 @@ A comprehensive geospatial and machine learning project for climate vulnerabilit
 
 ---
 
-**Project URL:** [Capstone Project](https://capstone-project-vizon15.streamlit.app/)
+**Streamlit App Link/URL:** [Capstone Project](https://capstone-project-vizon15.streamlit.app/)
+**[https://capstone-project-vizon15.streamlit.app/]**
 
-<<<<<<< HEAD
 
 ## 🛠️ Technologies Used
 
